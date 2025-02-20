@@ -4,11 +4,14 @@ import datetime as dt
 from smtplib import *
 import os
 import random
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 
-MY_EMAIL = "emmanuelmoronfolu6@gmail.com"
-PASSWORD = "cuophgaoasoiabpz"
+MY_EMAIL = os.getenv('MY_EMAIL')
+PASSWORD = os.getenv('PASSWORD')
 # 1. Update the birthdays.csv
 data_file = pandas.read_csv("birthdays.csv")
 now = dt.datetime.today()
